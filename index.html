@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+      #recaptcha {
+    width: 304px;
+    margin: 0 auto;
+}
+
+.required label:after {
+    color: #e32;
+    content: ' *';
+    display:inline;
+}
+
+  </style>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
+  
+  <script type="text/javascript">
+
+        // Called on form's `onsubmit`
+        function tosubmit() {
+            // Getting the value of your text input
+            var firstName = document.getElementById("firstName").value;
+            var lastName = document.getElementById("lastName").value;
+            var education = document.getElementById("education").value;
+            var income = document.getElementById("income").value;
+            var inputPhone = document.getElementById("inputPhone").value;
+            var inputEmail = document.getElementById("inputEmail").value;
+            var Street = document.getElementById("Street").value;
+            var Street2 = document.getElementById("Street2").value;
+            var PostalCode = document.getElementById("PostalCode").value;
+            var City = document.getElementById("City").value;
+            var State = document.getElementById("State").value;
+
+
+            // Storing the value above into localStorage
+            localStorage.setItem("firstName", firstName);
+            localStorage.setItem("lastName", lastName);
+            localStorage.setItem("education", education);
+            localStorage.setItem("income", income);
+            localStorage.setItem("inputPhone", inputPhone);
+            localStorage.setItem("inputEmail", inputEmail);
+            localStorage.setItem("Street", Street);
+            localStorage.setItem("Street2", Street2);
+            localStorage.setItem("PostalCode", PostalCode);
+            localStorage.setItem("City", City);
+            localStorage.setItem("State", State);
+
+
+            return true;
+        }
+
+    </script> 
+
+
+  <title>Registeration Form</title>
+
+</head>
+<body>
+
+
+  <div class="container-fluid" style="text-align:center; background-color:#f5f5f5;"> 
+       <div class="page-header">
+    <h1>CSC-642 Summer 2019 Individual Assignment </h1>      
+  </div>
+  <h4>by Amna Khan</h4> 
+  </div>
+  <hr>
+        <div class="signup-form">
+      <!--   <h2>Register</h2> -->
+        </div>
+
+
+
+<div class="container-fluid">
+
+<div class="col-sm-10 col-sm-offset-1">
+    <div class="panel panel-default ">
+                 <div class="panel-heading"><h4>Registration</h4></div>
+      <div class="panel-body">
+           
+
+
+
+<form class="form-horizontal" role="form" name = "formfield"  id="formfield"  method="post" onsubmit="tosubmit();" action="thanks.html" >
+
+     <div class="form-group required ">
+                <label for="firstName" class="control-label col-sm-2 col-md-3">First Name </label>
+                <div class="col-sm-6 col-md-4">
+                    <input type="text" class="form-control" id="firstName" name = "firstName" placeholder="First Name" maxlength = "40" required>
+                </div>
+            </div>
+
+             <div class="form-group required ">
+                <label for="lastName" class="control-label col-sm-2 col-md-3">Last Name</label>
+                <div class="col-sm-6 col-md-4">
+                    <input type="text" class="form-control" id="lastName" name= "lastName" placeholder="Last Name" maxlength = "40" required>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="education" class="control-label col-sm-2 col-md-3">Education</label>
+                <div class="col-sm-6 col-md-4">
+                    <select class="form-control" id ="education">  <option>Select education</option> 
+                    <option>High School</option>
+                    <option>College Graduate</option>
+                  <option>Graduate</option>
+                <option>Post Graduate (Ph.D)</option></select>
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <label for="income" class="control-label col-sm-2 col-md-3">Income (Yearly)</label>
+                <div class="col-sm-6 col-md-4">
+                    <select class="form-control" id ="income">  <option>Select one</option> 
+                    <option>less than 50K</option>
+                    <option>Between 50K-100K</option>
+                  <option>Above 100K</option>
+                </select>
+                </div>
+            </div>
+
+
+
+            <div class="form-group row required">
+                <label for="inputPhone" class="control-label col-sm-2 col-md-3">Phone </label>
+                  <div class="col-sm-6 col-md-4">
+                    <input type="tel" class="form-control" id="inputPhone" placeholder="XXX-XXX-XXXX" maxlength="15" required>
+                                       <!--  <a class='my-tool-tip' data-toggle="tooltip" data-placement="right" title="Enter Phone in (XXX-XXX-XXXX) format" >
+                                    the span of icon goes inside the link...
+                                           <span class="glyphicon glyphicon-info-sign">  </span>
+                                          </a> -->
+                </div>
+            </div>
+            
+
+            <div class="form-group row">
+                <label for="inputEmail" class="control-label col-sm-2 col-md-3">Email</label>
+                <div class="col-sm-6 col-md-4">
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Email" >
+                </div>
+            </div>
+
+
+
+
+              <div class="form-group row">
+                <label for="confirmEmail" class="control-label col-sm-2 col-md-3">Confirm Email</label>
+                <div class="col-sm-6 col-md-4">
+                    <input type="email" class="form-control" id="confirmEmail" placeholder="Confirm"  >
+                </div>
+            </div>
+            
+
+
+ 
+
+
+    <fieldset class="address">
+         
+        <legend>Address</legend> 
+    
+        <div class="form-group required ">
+            <label class="control-label col-sm-2 col-md-3">
+                Address
+            </label>
+            <div class="col-sm-6 col-md-4">
+                <input class="form-control places-autocomplete" type="text" id="Street" name="Street" placeholder="" value="" maxlength = "40" autocomplete="address-line1" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2 col-md-3">
+                Apt/Suite #
+            </label>
+            <div class="col-sm-6 col-md-4">
+                <input class="form-control" type="text" id="Street2" maxlength = "6" name="Street2" value="" autocomplete="address-line2">
+            </div>
+        </div>
+
+  
+        <div class="form-group required">
+            <label class="control-label col-sm-2 col-md-3">
+                City
+            </label>
+            <div class="col-sm-4 col-md-3">
+                <input class="form-control" type="text" id="City"  maxlength = "20"name="City" value="" autocomplete="address-level2" required>
+            </div>
+        </div>
+
+
+
+        <div class="form-group required">
+            <label class="control-label col-sm-2 col-md-3">
+                State/Territory
+            </label>
+            <div class="col-sm-4 col-md-3">
+                <input class="form-control" type="text" id="State" name="State" value="" maxlength="40" autocomplete="address-level1" required>
+            </div>
+        </div>
+    
+
+
+          <div class="form-group required">
+            <label class="control-label col-sm-2 col-md-3">
+                Postal/Zip Code
+            </label>
+            <div class="col-sm-2 col-md-2">
+                <input class="form-control places-autocomplete" type="text" id="PostalCode" name="PostalCode" maxlength = "5" placeholder="" value="" autocomplete="postal-code" required>
+            </div>
+        </div>
+
+</fieldset>
+
+     <div class="form-group ">
+                <div class="col-sm-10 offset-sm-2 required">
+                    <label class="form-check-label control-label col-sm-4 col-md-6"><input type="checkbox" required> I AGREE TO TERM & CONDITIONS</label>
+                </div>
+            </div>
+
+     
+                <div id = "recaptcha">
+                      <div class="g-recaptcha" data-sitekey="6Lfwy68UAAAAAKr7eOyyczXoXWTFX-_QRZnBlKnK"></div>
+                </div>
+           
+
+<br>
+       
+
+
+            <div class="form-group ">
+                <div class= "offset-sm-2 " align="center">
+                     <button type="submit"  class="btn btn-primary" >Register</button>
+                </div>
+            </div>
+
+</form>
+    
+
+    </div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuyxftcE_LLGBq0E2NjpqLfIkoqTDonQc&libraries=places"></script>
+
+<script type="text/javascript">var GoogleMapsDemo = GoogleMapsDemo || {};
+
+
+
+
+GoogleMapsDemo.Utilities = (function () {
+    var _getUserLocation = function (successCallback, failureCallback) {
+        if (navigator.geolocation) {
+            failureCallback(true);
+        
+         } else {
+             failureCallback(false);
+         }
+    };
+    
+    return {
+        GetUserLocation: _getUserLocation
+    }
+})();
+
+
+
+
+
+
+GoogleMapsDemo.Application = (function () {
+    var _geocoder;
+    
+    var _init = function () {
+        _geocoder = new google.maps.Geocoder;
+        
+        GoogleMapsDemo.Utilities.GetUserLocation(function (position) {
+            var latLng = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+            _autofillFromUserLocation(latLng);
+            _initAutocompletes(latLng);
+        }, function (browserHasGeolocation) {
+            _initAutocompletes();
+        });
+    };
+    
+    var _initAutocompletes = function (latLng) {
+        $('.places-autocomplete').each(function () {
+            var input = this;
+            var isPostalCode = $(input).is('[id$=PostalCode]');
+            var autocomplete = new google.maps.places.Autocomplete(input, {
+                types: [isPostalCode ? '(regions)' : 'address']
+            });
+            if (latLng) {
+                _setBoundsFromLatLng(autocomplete, latLng);
+            }
+            
+            autocomplete.addListener('place_changed', function () {
+                _placeChanged(autocomplete, input);
+            });
+            
+            $(input).on('keydown', function (e) {
+                // Prevent form submit when selecting from autocomplete dropdown with enter key
+                if (e.keyCode === 13 && $('.pac-container:visible').length > 0) {
+                    e.preventDefault();
+                }
+            });
+        });
+    }
+    
+    var _autofillFromUserLocation = function (latLng) {
+        _reverseGeocode(latLng, function (result) {
+            $('.address').each(function (i, fieldset) {
+                _updateAddress({
+                    fieldset: fieldset,
+                    address_components: result.address_components
+                });
+            });
+        });
+    };
+    
+    var _reverseGeocode = function (latLng, successCallback, failureCallback) {
+        _geocoder.geocode({ 'location': latLng }, function(results, status) {
+            if (status === 'OK') {
+                if (results[1]) {
+                    successCallback(results[1]);
+                } else {
+                    if (failureCallback)
+                        failureCallback(status);
+                }
+            } else {
+                if (failureCallback)
+                    failureCallback(status);
+            }
+        });
+    }
+    
+    var _setBoundsFromLatLng = function (autocomplete, latLng) {
+        var circle = new google.maps.Circle({
+            radius: 40233.6, // 25 mi radius
+            center: latLng
+        });
+        autocomplete.setBounds(circle.getBounds());
+    }
+    
+    var _placeChanged = function (autocomplete, input) {
+        var place = autocomplete.getPlace();
+        _updateAddress({
+            input: input,
+            address_components: place.address_components
+        });
+    }
+    
+    var _updateAddress = function (args) {
+        var $fieldset;
+        var isPostalCode = false;
+        if (args.input) {
+            $fieldset = $(args.input).closest('fieldset');
+            isPostalCode = $(args.input).is('[id$=PostalCode]');
+            console.log(isPostalCode);
+        } else {
+            $fieldset = $(args.fieldset);
+        }
+        
+        var $street = $fieldset.find('[id$=Street]');
+        var $street2 = $fieldset.find('[id$=Street2]');
+        var $postalCode = $fieldset.find('[id$=PostalCode]');
+        var $city = $fieldset.find('[id$=City]');
+        var $country = $fieldset.find('[id$=Country]');
+        var $state = $fieldset.find('[id$=State]');
+        
+        if (!isPostalCode) {
+            $street.val('');
+            $street2.val('');
+        }
+        $postalCode.val('');
+        $city.val('');
+        $country.val('');
+        $state.val('');
+        
+        var streetNumber = '';
+        var route = '';
+        
+        for (var i = 0; i < args.address_components.length; i++) {
+            var component = args.address_components[i];
+            var addressType = component.types[0];
+
+            switch (addressType) {
+                case 'street_number':
+                    streetNumber = component.long_name;
+                    break;
+                case 'route':
+                    route = component.short_name;
+                    break;
+                case 'locality':
+                    $city.val(component.long_name);
+                    break;
+                case 'administrative_area_level_1':
+                    $state.val(component.long_name);
+                    break;
+                case 'postal_code':
+                    $postalCode.val(component.long_name);
+                    break;
+                case 'country':
+                    $country.val(component.long_name);
+                    break;
+            }
+        }
+        
+        if (route) {
+            $street.val(streetNumber && route
+                        ? streetNumber + ' ' + route
+                        : route);
+        }
+    }
+    
+    return {
+        Init: _init
+    }
+})();
+
+/* This should ideally be a callback for the async version of the Google Maps script reference.
+   However, Codepen doesn't give enough control over the document to ensure that the Google
+   Maps script tag is placed after the JS code here. */
+GoogleMapsDemo.Application.Init();
+</script>
+
+
+
+
+
+<script type="text/javascript">
+  var email = document.getElementById("inputEmail")
+  , cemail = document.getElementById("confirmEmail");
+
+function validateEmail(){
+  if(email.value != cemail.value) {
+    cemail.setCustomValidity("Emails Don't Match");
+  } else {
+    cemail.setCustomValidity('');
+  }
+}
+
+email.onchange = validateEmail;
+cemail.onkeyup = validateEmail;
+
+
+</script>
+
+
+<script >
+    $('#inputPhone').inputmask("(999) 999-9999");
+</script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
